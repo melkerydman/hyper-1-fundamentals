@@ -1,10 +1,5 @@
 # Hyper Island - Fundamentals 1
-
----
-
 My first project for FED23 at Hyper Island. A site that fetches images from Unsplash's API and presents them in two different ways.
-
-Hyper Island - Fundamentals Module
 
 ### :briefcase: Brief:
 
