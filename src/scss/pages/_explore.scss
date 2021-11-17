@@ -1,0 +1,99 @@
+@use '../abstracts' as *;
+
+#explore {
+    position: fixed;
+
+    nav {
+        mix-blend-mode: difference;
+        
+        a {
+            mix-blend-mode: difference;
+        }
+    }
+
+    main {
+        display: flex;
+        position: relative;
+    }
+
+    .spectrum {
+        mix-blend-mode: difference;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 100%;
+        height: 2px;
+        background: 
+            radial-gradient(circle, rgba(168,105,138,1) 0%, rgba(8,210,117,1) 25%, rgba(11,113,215,1) 45%, rgba(124,83,164,1) 60%, rgba(179,92,106,1) 75%, rgba(215,150,76,1) 88%, rgba(168,162,104,1) 100%);
+        background-size: 200%;
+    }
+
+    h2, .textbox {
+        position: fixed;
+        user-select: none;
+        mix-blend-mode: difference;
+    }
+
+    h2 {
+        top: 38.2%;
+        left: 38.2%;
+        color: var(--clr-accent);
+        white-space: nowrap;
+        font-weight: normal;
+        transform: translate(-50%, -50%);
+    }
+    
+    .textbox {
+        bottom: 38.2%;
+        right: 38.2%;
+        transform: translate(50%, 50%);
+    }
+}
+
+#playground {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    
+    img {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: $bp-medium){
+    #explore {
+        h2 {
+            font-size: var(--fs-500);
+        }
+        .textbox {
+            max-width: 50ch;
+
+            p, a {
+                font-size: var(--fs-200);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $bp-small){
+    #explore {
+        h2 {
+            font-size: var(--fs-400);
+            bottom: 55%;
+            left: 50%;
+            top: auto;
+        }
+        .textbox {
+            top: 55%;
+            right: 50%;
+            transform: translate(50%, 0);
+            width: 80%;
+        }
+    }
+}

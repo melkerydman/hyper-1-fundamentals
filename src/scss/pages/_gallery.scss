@@ -1,0 +1,164 @@
+@use '../abstracts/' as *;
+
+$transition-height-fast: .5s ease-out;
+$transition-height-slow: 1.5s ease-out;
+
+// Wrapping container
+.gallery-wrapper {
+    color: var(--clr-primary);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0;
+}
+
+// Showcase section
+.showcase {
+    flex-grow: 1;
+    position: relative;
+    height: 60%;
+    
+    margin: 0 auto;
+    padding-bottom: 3rem;
+    transition: height $transition-height-slow;
+        
+    &__content {
+        height: 100%; // Needed to contain image
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        // Has .hidden as default and .visible get added on hover
+        // Transition animates that opacity.
+        transition: all .5s ease-in-out;
+    }
+    
+    &__image,
+    &__info {
+        display: flex;
+    }
+    
+    &__image {
+        align-items: center;
+        height: 100%;
+        max-height: 100%;
+        overflow: auto;
+
+        img {
+            // container is wider than it is high, therefore set max-height instead of width
+            max-height: 100%;
+            width: auto;
+        }
+    }
+    
+    &__info {
+        justify-content: center;
+        flex-direction: column;
+        word-wrap: break-word;
+        gap: 1rem;
+
+        strong {
+            color: var(--clr-primary);
+            font-style: italic;
+            font-weight: normal;
+        }
+    }
+}
+
+// Projects section
+.projects {
+    position: relative;
+    bottom: 0;
+    left: 0;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    height: 40%;
+    gap: 10px;
+    
+    border-top: 1px solid var(--clr-dark); //Horizontal line between sections
+    
+    transform: translateY(40vh);
+    transform-origin: center bottom;
+    transition: all 1s ease-out, height $transition-height-slow;
+        
+    &__column {
+        overflow: scroll;
+        opacity: 0;
+        transition: opacity 1s 3s linear;
+        
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    // Animations
+    // change name to .animate (if i even wanna use it?)
+    &.slide-in {
+        transform: translateY(0);
+
+        .projects__column {
+            opacity: 1;
+        }
+    }
+}
+
+// When project is clicked and expanded
+.expanded {
+
+    .showcase {
+        height: 90%;
+    }
+
+    .projects {
+        height: 0;
+        transform-origin: bottom;
+        border-bottom: none;
+        transition: height $transition-height-fast;
+        pointer-events: none;
+        
+        &.active {
+            transform-origin: bottom;
+            height: 1rem;
+        }
+    }
+    
+    // Expand button on bottom of expanded showcase
+    .expand-btn {
+        color: var(--clr-accent);
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding-bottom: 1.2rem;
+        margin-right: .5rem;
+        transition: opacity .5s;
+        cursor: pointer;
+        
+        &:hover {
+            font-style: italic;
+        }
+    }
+}
+
+// Media queries
+@media screen and (max-width: $bp-medium) {
+
+    .showcase {
+        height: 10%;
+
+        &__content {
+            flex-direction: column;
+        }
+
+        &__info {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+
+    .projects {
+        height: 90%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

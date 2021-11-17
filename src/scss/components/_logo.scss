@@ -1,0 +1,12 @@
+@use '../abstracts/' as *;
+
+.logo {
+    font-size: var(--fs-700);
+    font-family: var(--ff-accent);
+    color: var(--clr-primary);
+    letter-spacing: var(--ls-4);
+    
+    &:hover {
+        font-style: normal;
+    }
+}

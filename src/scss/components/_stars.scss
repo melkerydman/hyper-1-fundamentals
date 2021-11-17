@@ -1,0 +1,18 @@
+.stars {
+    z-index: -1;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    
+    animation: moveBackground 60s linear infinite;
+    transform-origin: bottom;
+    
+    &__clone {
+        top: 100%;
+    }
+}
+
+.star {
+    position: absolute;
+    background: var(--clr-light);
+}

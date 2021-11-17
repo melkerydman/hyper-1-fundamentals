@@ -1,0 +1,44 @@
+@use '../abstracts' as *;
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    background: var(--clr-dark);
+}
+main {
+    width: 100%;
+}
+
+.overlay {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: var(--clr-dark);
+    opacity: .7;
+
+    &::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: .1;
+        background: radial-gradient(circle, rgba(143, 225, 255, 0.33) 0%, rgb(83, 192, 255) 41%, rgba(249,249,249,0) 100%);
+        z-index: -1;
+    }
+    
+    &::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: .05;
+        background: linear-gradient(139deg, rgba(0,255,185,0) 0%, rgba(0,214,207,0.2539390756302521) 47%, rgba(145,235,219,1) 62%, rgba(255,251,229,0.4780287114845938) 77%, rgba(65,222,203,0) 90%);
+        z-index: -2;
+    }
+}

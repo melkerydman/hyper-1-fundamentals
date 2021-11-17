@@ -1,0 +1,8 @@
+node_modules
+notes.txt
+data
+inspo
+.vscode
+.cache
+.env
+.DS_Store

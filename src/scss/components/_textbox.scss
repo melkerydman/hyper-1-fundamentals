@@ -1,0 +1,20 @@
+@use '../abstracts' as *;
+
+.textbox {
+    text-align: justify;
+    max-width: 70ch;
+
+    p, a {
+        font-size: var(--fs-300);
+    }
+
+    h1 {
+        color: var(--clr-primary);
+    }
+    h3 {
+        color: var(--clr-primary);
+    }
+    p {
+        color: var(--clr-secondary);
+    }
+}

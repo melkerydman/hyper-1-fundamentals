@@ -1,0 +1,9 @@
+@use '../abstracts' as *;
+
+.link {
+    font-style: normal;
+    color: var(--clr-primary);
+    &:hover {
+        font-style: italic;
+    }
+}
