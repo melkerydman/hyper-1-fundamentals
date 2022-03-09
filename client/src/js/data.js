@@ -42,7 +42,9 @@ function getDataFromLocalStorage(key) {
 
 export async function getData() {
   if (localStorage.getItem("imageData") === null) {
-    await fetch(`http://localhost:8080/random/${keyword}&${amountOfImages}`)
+    await fetch(
+      `https://hyper-stargazer.herokuapp.com/random/${keyword}&${amountOfImages}`
+    )
       .then((response) => response.json())
       .then((data) => {
         let formattedData = formatImageData(data);
