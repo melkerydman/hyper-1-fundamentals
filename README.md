@@ -51,9 +51,6 @@ Setting up Webpack and .env-file to hide API key was also quite the struggle, ha
 
 <<<<<<< HEAD
 ### :sparkle: Updates:
-=======
-### :check: Updates:
->>>>>>> e2ba5ead2e873925f4acbeeac1bae1799a42e280
 
 - Added backend server
 - Deployed frontend to Netlify and backend to Heroku
