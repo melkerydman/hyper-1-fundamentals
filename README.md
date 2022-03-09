@@ -49,7 +49,6 @@ Setting up Webpack and .env-file to hide API key was also quite the struggle, ha
 - Having an idea and planning beforehand trumphs a "do as you go" approach.
 - Documentation should be done continously.
 
-<<<<<<< HEAD
 ### :sparkle: Updates:
 
 - Added backend server
