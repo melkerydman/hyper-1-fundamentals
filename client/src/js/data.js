@@ -58,19 +58,3 @@ export async function getData() {
     return getDataFromLocalStorage("imageData");
   }
 }
-// export async function getData() {
-//     if (localStorage.getItem("imageData") === null) {
-//         await fetch(`https://api.unsplash.com/photos/random?query=${keyword}&count=${amountOfImages}&client_id=${apiKey}`)
-//             .then(response => response.json())
-//             .then(data => {
-//                 let formattedData = formatImageData(data);
-//                 storeDataInLocalStorage("imageData", formattedData);
-//                 console.log('in fetch');
-//             })
-//             console.log('getData if');
-//             return getDataFromLocalStorage("imageData");
-//     } else {
-//         console.log('getData else');
-//         return getDataFromLocalStorage("imageData");
-//     }
-// }
